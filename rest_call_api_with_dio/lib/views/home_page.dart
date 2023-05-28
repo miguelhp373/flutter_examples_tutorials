@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:rest_call_api_http_methods/services/api_request.dart';
 
@@ -43,7 +42,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          FutureBuilder<Response>(
+          FutureBuilder(
             future: ApiRequest().fetchData('/users'),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
